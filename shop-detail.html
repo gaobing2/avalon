@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link type="text/css" rel="stylesheet" href="css/base.css">
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/x-global.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/avalon.js"></script>
+    <script src="js/avaon_test.js"></script>
+    <title>城市热线手机端</title>
+
+    <style>
+        .sc-bg {
+            width: 100%;
+            position: absolute;
+            top: 25px;
+            left: 0px;
+            z-index: 99;
+            text-align: center;
+            color: #fff;
+        }
+        .sc-bg span {
+            display: block;
+            margin: 0 50px;
+            background-color: #222;
+            opacity: 1.0;
+            border-radius: 5px;
+        }
+        .share-bg {
+            background-color: #fff;
+            opacity: 1.0;
+            border-radius: 5px;
+            width: 70%;
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            z-index: 99;
+            text-align: center;
+            z-index: 100;
+        }
+        .share-bg a,
+        .share-bg p {
+            display: block;
+            line-height: 30px;
+            height: 30px;
+            margin: 0 10px;
+            padding: 5px 0;
+            border-bottom: 1px solid #e3e3e3;
+        }
+        #loginBar {
+            height: 50px;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header ms-controller="menu">
+        <div class="top rel">
+            <div class="return f16"><span class="return-dd"><a href="shop-list.html">商家</a></span>
+            </div>
+            <span class="logo f16">商家详情</span>
+            <span class="hd db"><a href="javascript:void(0)" class="new-a-rx x-nav-key" ms-click="clickt()">资讯列表</a></span>
+
+        </div>
+        <div class="new-rx-tab" style="display:none" ms-visible="toggle">
+            <div class="new-tbl-type">
+                <a href="../index.html" class="new-tbl-cell"> <span class="icon">首页</span>
+                    <p>首页</p>
+                </a>
+                <a href="../资讯/index.html" class="new-tbl-cell"> <span class="icon icon4">资讯</span>
+                    <p>资讯</p>
+                </a>
+                <a href="../专题/index.html" class="new-tbl-cell"> <span class="icon icon5">专题</span>
+                    <p>专题</p>
+                </a>
+                <a href="../sale-list.html" class="new-tbl-cell"> <span class="icon icon3">优惠</span>
+                    <p>优惠</p>
+                </a>
+                <a href="../论坛/index.html" class="new-tbl-cell"> <span class="icon icon8">论坛</span>
+                    <p>论坛</p>
+                </a>
+                <a href="../shop-list.html" class="new-tbl-cell"> <span class="icon icon2">商家</span>
+                    <p class="on">商家</p>
+                </a>
+                <a href="../shop-list.html" class="new-tbl-cell"> <span class="icon icon6">餐饮</span>
+                    <p class="on">餐饮</p>
+                </a>
+                <a href="../shop-list.html" class="new-tbl-cell"> <span class="icon icon7">娱乐</span>
+                    <p>娱乐</p>
+                </a>
+                <div class="cl"></div>
+            </div>
+        </div>
+    </header>
+    <div class="h7"></div>
+    <!--商家图片 地理位置 电话-->
+    <div class="shopmessage" ms-controller="ShopMessage">
+        <li ms-repeat="jsondata">
+            <a href="shop-company.html">
+                <div class="s-shop-name bor-bottom-none"><span class="fr f16 more1 fn"></span>{{el.name}}<span class="x-shop-jian">荐</span><span class="x-shop-v">&nbsp;</span><span class="x-shop-card">卡</span>
+                </div>
+            </a>
+        </li>
+        <div class="x-s-detail-box x-s-detail-locate">
+            <ul>
+                <li class="pic" ms-repeat="jsondata">
+                    <img alt="e" ms-src="el.imgurl" width="100%" height="100%" /><span class="png-bg"></span>
+                    <div class="score">
+                        <div class="fr mr6 pt3">
+                            <a href="#" class="x-shop-sc" id="shouc"></a>
+                            <a href="#" class="x-shop-share" onClick="showDialog.show({id:'loginBar02',bgcolor:'#000',opacity:60});"></a>
+                        </div>
+                        <section class="x-star-conter dib p0-10">综合评分：<span></span><span></span><span></span><span></span><span class="star-gray"></span>
+                        </section>
+                    </div>
+                    <!--收藏成功 begin -->
+                    <div class="sc-bg" id="loginBar" style="display:none;"><span>收藏成功</span>
+                    </div>
+                    <!--收藏成功 end -->
+
+                    <!--分享 begin -->
+                    <div class="share-bg" id="loginBar02" style="display:none;"> <a href="">腾讯微博</a>
+                        <a href="">新浪微博</a>
+                        <a href="#" onClick="javascript:showDialog.hide();">取消</a> 
+                    </div>
+                    <!--分享 end -->
+                </li>
+
+                <li class="adress" ms-repeat="jsondata">
+                    <div class="x-ver-center">{{el.address}}
+                        <!--地址：洛阳市西工区芳林路与中州中路交叉口南-->
+                    </div><em><a href="" class="dingw"></a></em>
+                </li>
+                <li class="tel adress" ms-repeat="jsondata">
+                    <div class="x-ver-center">{{el.telephone}}
+                        <!--电话：0379-63636363-->
+                    </div><em><a href="#" class="phone" onClick="showDialog.show({id:'loginBar03',bgcolor:'#000',opacity:60});"></a></em>
+                    <!--分享 begin -->
+                    <div class="share-bg" id="loginBar03" style="display:none;">
+                        <p>拨打电话</p>
+                        <a href="" class="red">0379-63636363</a>
+                        <a href="#" onClick="javascript:showDialog.hide();">取消</a> 
+                    </div>
+                    <!--分享 end -->
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="h7"></div>
+    <!--优惠信息-->
+    <div class="x-s-detail-box x-s-detail-salelist">
+        <ul>
+            <li>
+                <h3 class="fn f16">优惠信息</h3>
+            </li>
+            <li class="f14">
+                <p class="red">会员卡享受8.8折优惠</p>
+                <p>点击查看更多优惠详情！</p>
+            </li>
+        </ul>
+    </div>
+    <div class="h7"></div>
+    <!--会员评价-->
+    <div class="x-s-detail-box x-s-detail-comment" ms-controller="ShopComments">
+        <ul>
+            <li class="rel">
+                <h3 class="fn f15">用户评论 （ {{jsonda.size()}} ）<span class="c8"></span></h3>
+                <a href="comment-submit.html" class="comment-btn tc lh26">我要评论</a>
+            </li>
+            <li>
+                <div>
+                    <section class="x-star-conter dib fr"><span></span><span></span><span></span><span></span><span class="star-gray"></span>
+                    </section>
+                    <span class="c9 f11">黄先森 &nbsp; 2015-04-04</span>
+                </div>
+                <div class="f14 mt10">味道非常不错！！！</div>
+                <div class="mt10 s-comment-img">
+                    <div class="comment-img-list">
+                        <img src="images/temp/img-10.jpg" />
+                    </div>
+                    <div class="comment-img-list">
+                        <img src="images/temp/img-10.jpg" />
+                    </div>
+                    <div class="comment-img-list">
+                        <img src="images/temp/img-10.jpg" />
+                    </div>
+                    <div class="comment-img-list">
+                        <img src="images/temp/img-10.jpg"/>
+                    </div>
+                    <div class="cl"></div>
+                </div>
+            </li>
+            <li ms-repeat="jsonda" ms-visible="$index<5">
+                <div>
+                    <section class="x-star-conter dib fr"><span></span><span></span><span></span><span class="star-gray"></span><span class="star-gray"></span>
+                    </section>
+                    <span class="c9 f12">{{el.user}} &nbsp; {{el.date}}</span>
+                </div>
+                <div class="f14 mt10">{{el.text}}</div>
+
+            </li>
+            <li class="tc"><a href="javascript:void(0)" ms-click="viewAll()" class="red f14">查看全部评论</a>
+            </li>
+        </ul>
+    </div>
+    <div class="h7"></div>
+    <div class="x-s-detail-box" ms-controller="ShopsList">
+
+        <h3 class="fn f15 x-s-tit">附近商家</h3>
+        <div class="pd10-0 bor-bottom">
+            <ul>
+                <li ms-repeat="jsonA" ms-visible="$index<5">
+                    <a href="shop-detail.html">
+                        <div class="list-item rel h70">
+                            <div class="pic">
+                                <img alt="shop" ms-src="el.url" />
+                            </div>
+
+                            <div class="info">
+                                <h2>{{el.name}}<span class="x-shop-jian">荐</span><span class="x-shop-v">&nbsp;</span><span class="x-shop-card">卡</span></h2>
+                                <div>
+                                    <div class="x-star-conter"><span></span><span></span><span></span><span></span><span class="star-gray"></span>
+                                    </div>
+                                </div>
+                                <h3 class="fn f12">{{el.AreaCircle + " "+ el.ClassName}}</h3>
+                                <div class="away gray">
+                                    <1.0km</div>
+                                </div>
+                            </div>
+                    </a>
+                </li>
+            </ul>
+            </div>
+
+
+        </div>
+
+        <!--网站底部-->
+        <footer>
+            <section class="footer-t">
+                <p class="user-info"> <a class="logon-tt enter-tt" href="../login.html">登录</a><a class="logon-tt register-tt" href="../regist.html">注册</a>
+                </p>
+                <p class="foot-city f14"> <span>洛阳</span>  <a href="changeCity.html">切换城市</a>
+                </p>
+            </section>
+            <section class="footer-sort">
+                <ul class="com-footitem tc">
+                    <li><a href="index.html">首页</a>
+                    </li>
+                    <li><a href="资讯/index.html">资讯</a>
+                    </li>
+                    <li><a href="商家/index.html">商家</a>
+                    </li>
+                    <li><a href="商协/index.html">商协</a>
+                    </li>
+                    <li><a href="论坛/index.html">论坛</a>
+                    </li>
+                    <li><a href="便民/center.html">便民</a>
+                    </li>
+
+                </ul>
+            </section>
+            <section class="footer-copyright f12">河洛网 &copy; 2014 ICP证豫B2-20100066</section>
+
+        </footer>
+        <!--弹窗js-->
+        <script type="text/javascript" src="js/showDialog.min.js"></script>
+</body>
+
+</html>

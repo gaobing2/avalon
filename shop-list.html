@@ -1,0 +1,531 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link href="css/common_v5.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/x-global.css">
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/slideNav-20140730.min.js"></script>
+<script src="js/iscroll-5.1.2.min.js"></script>
+<script src="js/avalon.js"></script>
+<script src="js/avaon_test.js"></script>
+<style>
+.hide {
+	display: none;
+}
+</style>
+
+<title>城市热线手机端</title>
+</head>
+<body>
+<header ms-controller="menu">
+<div class="top rel">
+    <div class="top-pd"><a href="" class="x-back"></a>
+      <input type="text" value="请输入关键词"  class="x-s-txt" onclick="if(value==defaultValue){value=''}"  onBlur="if(!value){value=defaultValue;}" />
+      <a href="javascript:void(0)"  class="new-a-rx x-nav-key x-nav-key-b" ms-click="clickt()"><span>快捷方式</span></a></div>
+  </div>
+  <div class="new-rx-tab" ms-visible="toggle      ">
+    <div class="new-tbl-type"> <a href="../index.html" class="new-tbl-cell"> <span class="icon">首页</span>
+      <p>首页</p>
+      </a>  
+      <a href="../资讯/index.html" class="new-tbl-cell"> <span class="icon icon4">资讯</span>
+      <p>资讯</p>
+      </a>
+      <a href="../专题/index.html" class="new-tbl-cell"> <span class="icon icon5">专题</span>
+      <p>专题</p>
+      </a> 
+       <a  href="../sale-list.html"  class="new-tbl-cell"> <span class="icon icon3">优惠</span>
+      <p>优惠</p>
+      </a>
+     <a href="../论坛/index.html" class="new-tbl-cell"> <span class="icon icon8">论坛</span>
+      <p>论坛</p>
+      </a>
+      <a href="../shop-list.html" class="new-tbl-cell"> <span class="icon icon2">商家</span>
+      <p class="on">商家</p>
+      </a>
+        <a href="../shop-list.html" class="new-tbl-cell"> <span class="icon icon6">餐饮</span>
+      <p class="on">餐饮</p>
+      </a> <a  href="../shop-list.html"  class="new-tbl-cell"> <span class="icon icon7">娱乐</span>
+      <p>娱乐</p>
+      </a>
+      <div class="cl"></div>
+       </div>
+  </div>
+</header>
+<style type="text/css">
+		.sortdrop-wrapper {min-height: 225px; -webkit-transition: initial;}
+		.sortdrop-wrapper .sort-view, .sortdrop-wrapper .sort-sider {height: 100%;}
+	</style>
+<!-- 菜单头部 分类 商圈 排序 -->
+<div class="cate-nav">
+  <div class="mall-cate-box">
+    <ul class="mall-cate">
+      <li><a href="javascript:void(0);" data-type="district" id="districtLine">全部商区</a>      </li>
+      <li><a href="javascript:void(0);" data-type="category">全部分类<em></em></a></li>
+      <li><a href="javascript:void(0);" data-type="sort">默认排序<em></em></a></li>
+    </ul>
+  </div>
+  <!--弹出分类-->
+  <div class="sortdrop-wrapper hide" data-type="district">
+    <div class="sort-wrapper">
+      <div class="sort-view">
+        <div>
+          <section class="select"> <a href="list.php?cat=1&amp;sort=default&amp;district=all" data-main="district_emptyMenu"> <span>全部商区</span> <em></em> </a> </section>
+          <section> <a href="list.php?cat=1&amp;sort=default&amp;district=1120" data-main="district_1120"> <span>西工区</span> <em class="more">1055</em> </a> </section>
+          <section> <a href="list.php?cat=1&amp;sort=default&amp;district=1122" data-main="district_1122"> <span>涧西区</span> <em class="more">955</em> </a> </section>
+          <section> <a href="list.php?cat=1&amp;sort=default&amp;district=1121" data-main="district_1121"> <span>洛南新区</span> <em class="more">453</em> </a> </section>
+          <section> <a href="list.php?cat=1&amp;sort=default&amp;district=2035" data-main="district_2035"> <span>老城区</span> <em class="more">233</em> </a> </section>
+          <section> <a href="list.php?cat=1&amp;sort=default&amp;district=3004" data-main="district_3004"> <span>洛龙区</span> <em class="more">205</em> </a> </section>
+          <section> <a href="list.php?cat=1&amp;sort=default&amp;district=2705" data-main="district_2705"> <span>栾川县</span> <em class="more">106</em> </a> </section>
+          <section> <a href="list.php?cat=1&amp;sort=default&amp;district=2036" data-main="district_2036"> <span>瀍河回族区</span> <em class="more">60</em> </a> </section>
+          <section> <a href="list.php?cat=1&amp;sort=default&amp;district=3481" data-main="district_3481"> <span>伊川县</span> <em class="more">22</em> </a> </section>
+          <section> <a href="list.php?cat=1&amp;sort=default&amp;district=3507" data-main="district_3507"> <span>孟津县</span> <em class="more">14</em> </a> </section>
+          <section> <a href="list.php?cat=1&amp;sort=default&amp;district=2255" data-main="district_emptyMenu"> <span>偃师市</span> <em>14</em> </a> </section>
+          <section> <a href="list.php?cat=1&amp;sort=default&amp;district=2037" data-main="district_emptyMenu"> <span>吉利区</span> <em>14</em> </a> </section>
+          <section> <a href="list.php?cat=1&amp;sort=default&amp;district=3577" data-main="district_3577"> <span>宜阳县</span> <em class="more">12</em> </a> </section>
+          <section> <a href="list.php?cat=1&amp;sort=default&amp;district=2039" data-main="district_2039"> <span>高新区</span> <em class="more">9</em> </a> </section>
+          <section> <a href="list.php?cat=1&amp;sort=default&amp;district=3480" data-main="district_3480"> <span>新安县</span> <em class="more">5</em> </a> </section>
+          <section> <a href="list.php?cat=1&amp;sort=default&amp;district=3578" data-main="district_3578"> <span>嵩县</span> <em class="more">2</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="district_1120">
+        <div>
+          <section> <a class="submenu_handle select" href="#"> <span>全部</span> <em>1055</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1120&amp;zone=9594"> <span>道北</span> <em>44</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1120&amp;zone=9595"> <span>九都路美食街</span> <em>115</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1120&amp;zone=7039"> <span>凯旋广场</span> <em>187</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1120&amp;zone=7040"> <span>洛阳火车站</span> <em>147</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1120&amp;zone=7038"> <span>王城公园</span> <em>118</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1120&amp;zone=7041"> <span>西工周边</span> <em>75</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1120&amp;zone=7037"> <span>新都汇</span> <em>402</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1120&amp;zone=99999"> <span>其他</span> <em>12</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="district_1122">
+        <div>
+          <section> <a class="submenu_handle select" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=all"> <span>全部</span> <em>955</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=9600"> <span>高新区</span> <em>1</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=7053"> <span>广州市场</span> <em>87</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=9598"> <span>建设路沿线</span> <em>55</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=7049"> <span>涧西周边</span> <em>68</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=7056"> <span>联盟路</span> <em>21</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=7055"> <span>洛浦公园</span> <em>13</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=7054"> <span>牡丹公园</span> <em>37</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=7048"> <span>牡丹广场</span> <em>95</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=7050"> <span>南昌路</span> <em>176</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=7051"> <span>上海市场</span> <em>166</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=9596"> <span>嵩山路沿线</span> <em>22</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=7047"> <span>万达广场</span> <em>220</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=9597"> <span>香港城</span> <em>13</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=7052"> <span>西苑公园</span> <em>62</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=12974"> <span>壹号城邦</span> <em>7</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=9599"> <span>珠江路美食街</span> <em>11</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1122&amp;zone=99999"> <span>其他</span> <em>5</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="district_1121">
+        <div>
+          <section> <a class="submenu_handle select" href="list.php?cat=1&amp;sort=default&amp;district=1121&amp;zone=all"> <span>全部</span> <em>453</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1121&amp;zone=7062"> <span>宝龙城市广场</span> <em>156</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1121&amp;zone=7059"> <span>丹尼斯—盛德美</span> <em>34</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1121&amp;zone=7061"> <span>龙祥商业街</span> <em>18</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1121&amp;zone=9610"> <span>泉舜广场</span> <em>114</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1121&amp;zone=7057"> <span>森林半岛</span> <em>130</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1121&amp;zone=7060"> <span>中和商业街</span> <em>9</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=1121&amp;zone=99999"> <span>其他</span> <em>2</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="district_2035">
+        <div>
+          <section> <a class="submenu_handle select" href="list.php?cat=1&amp;sort=default&amp;district=2035&amp;zone=all"> <span>全部</span> <em>233</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2035&amp;zone=9604"> <span>北大街</span> <em>38</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2035&amp;zone=7042"> <span>八角楼金街</span> <em>9</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2035&amp;zone=9601"> <span>老城</span> <em>42</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2035&amp;zone=7043"> <span>丽京门</span> <em>35</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2035&amp;zone=9603"> <span>丽景门</span> <em>23</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2035&amp;zone=7045"> <span>南关公园</span> <em>8</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2035&amp;zone=7044"> <span>青年宫广场</span> <em>44</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2035&amp;zone=9605"> <span>十字街</span> <em>7</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2035&amp;zone=9602"> <span>天街</span> <em>6</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2035&amp;zone=7046"> <span>新街</span> <em>23</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2035&amp;zone=99999"> <span>其他</span> <em>2</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="district_3004">
+        <div>
+          <section> <a class="submenu_handle select" href="list.php?cat=1&amp;sort=default&amp;district=3004&amp;zone=all"> <span>全部</span> <em>205</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=3004&amp;zone=9608"> <span>安乐</span> <em>32</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=3004&amp;zone=9609"> <span>关林</span> <em>48</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=3004&amp;zone=9607"> <span>政和路美食街</span> <em>87</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=3004&amp;zone=99999"> <span>其他</span> <em>29</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="district_2705">
+        <div>
+          <section> <a class="submenu_handle select" href="list.php?cat=1&amp;sort=default&amp;district=2705&amp;zone=all"> <span>全部</span> <em>106</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2705&amp;zone=14213"> <span>滨河大道</span> <em>2</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2705&amp;zone=7944"> <span>长春路</span> <em>75</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2705&amp;zone=14540"> <span>重渡沟景区</span> <em>2</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2705&amp;zone=14215"> <span>君山路</span> <em>9</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2705&amp;zone=14539"> <span>养子沟景区</span> <em>13</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2705&amp;zone=99999"> <span>其他</span> <em>5</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="district_2036">
+        <div>
+          <section> <a class="submenu_handle select" href="list.php?cat=1&amp;sort=default&amp;district=2036&amp;zone=all"> <span>全部</span> <em>60</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2036&amp;zone=7063"> <span>东花坛</span> <em>37</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2036&amp;zone=7065"> <span>瀍河周边</span> <em>25</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2036&amp;zone=7064"> <span>正骨医院</span> <em>2</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="district_3481">
+        <div>
+          <section> <a class="submenu_handle select" href="list.php?cat=1&amp;sort=default&amp;district=3481&amp;zone=all"> <span>全部</span> <em>22</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=3481&amp;zone=12702"> <span>文化路</span> <em>22</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="district_3507">
+        <div>
+          <section> <a class="submenu_handle select" href="list.php?cat=1&amp;sort=default&amp;district=3507&amp;zone=all"> <span>全部</span> <em>14</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=3507&amp;zone=99999"> <span>其他</span> <em>14</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="district_2255">
+        <div>
+          <section> <a class="submenu_handle select" href="list.php?cat=1&amp;sort=default&amp;district=2255&amp;zone=all"> <span>全部</span> <em>14</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="district_2037">
+        <div>
+          <section> <a class="submenu_handle select" href="list.php?cat=1&amp;sort=default&amp;district=2037&amp;zone=all"> <span>全部</span> <em>14</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="district_3577">
+        <div>
+          <section> <a class="submenu_handle select" href="list.php?cat=1&amp;sort=default&amp;district=3577&amp;zone=all"> <span>全部</span> <em>12</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=3577&amp;zone=99999"> <span>其他</span> <em>9</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="district_2039">
+        <div>
+          <section> <a class="submenu_handle select" href="list.php?cat=1&amp;sort=default&amp;district=2039&amp;zone=all"> <span>全部</span> <em>9</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=2039&amp;zone=99999"> <span>其他</span> <em>2</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="district_3480">
+        <div>
+          <section> <a class="submenu_handle select" href="list.php?cat=1&amp;sort=default&amp;district=3480&amp;zone=all"> <span>全部</span> <em>5</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=3480&amp;zone=99999"> <span>其他</span> <em>1</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="district_3578">
+        <div>
+          <section> <a class="submenu_handle select" href="list.php?cat=1&amp;sort=default&amp;district=3578&amp;zone=all"> <span>全部</span> <em>2</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=1&amp;sort=default&amp;district=3578&amp;zone=99999"> <span>其他</span> <em>2</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="district_emptyMenu">
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <div class="sortdrop-wrapper hide" data-type="category">
+    <div class="sort-wrapper">
+      <div class="sort-view">
+        <div>
+          <section class="select"> <a href="list.php?cat=0&amp;sort=default" data-main="category_emptyMenu"> <span class="all">全部分类</span> <em></em> </a> </section>
+          <section> <a href="list.php?cat=0&amp;sort=default&n=1" data-main="category_emptyMenu"> <span class="news">今日新单</span> <em>32</em> </a> </section>
+          <section> <a href="list.php?cat=99&amp;sort=default" data-main="category_99"> <span class="foods">美食</span> <em class="more">1496</em> </a> </section>
+          <section> <a href="list.php?cat=2&amp;sort=default" data-main="category_2"> <span class="yule">休闲娱乐</span> <em class="more">260</em> </a> </section>
+          <section> <a href="list.php?cat=29&amp;sort=default" data-main="category_29"> <span class="movis">电影</span> <em class="more">12</em> </a> </section>
+          <section> <a href="list.php?cat=46&amp;sort=default" data-main="category_46"> <span class="life">生活服务</span> <em class="more">257</em> </a> </section>
+          <section> <a href="list.php?cat=37&amp;sort=default" data-main="category_37"> <span class="sheying">摄影写真</span> <em class="more">188</em> </a> </section>
+          <section> <a href="list.php?cat=300&amp;sort=default" data-main="category_300"> <span class="hotel">酒店</span> <em class="more">551</em> </a> </section>
+          <section> <a href="list.php?cat=400&amp;sort=default" data-main="category_400"> <span class="tour">旅游</span> <em class="more">30</em> </a> </section>
+          <section> <a href="list.php?cat=442&amp;sort=default" data-main="category_442"> <span class="beauty">丽人</span> <em class="more">177</em> </a> </section>
+          <section> <a href="list.php?cat=481&amp;sort=default" data-main="category_481"> <span class="edu">教育培训</span> <em class="more">294</em> </a> </section>
+          <section> <a href="list.php?cat=16&amp;sort=default" data-main="category_emptyMenu"> <span class="lottery">抽奖公益</span> <em>4</em> </a> </section>
+          <section> <a href="list.php?cat=3&amp;sort=default" data-main="category_3"> <span class="shop">购物</span> <em class="more">2755</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="category_99">
+        <div>
+          <section> <a class="submenu_handle" href="list.php?cat=99&amp;sort=default"> <span>全部</span> <em>1496</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=189&amp;pcat=99&amp;sort=default"> <span>自助餐</span> <em>70</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=178&amp;pcat=99&amp;sort=default"> <span>火锅</span> <em>200</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=179&amp;pcat=99&amp;sort=default"> <span>烧烤</span> <em>48</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=422&amp;pcat=99&amp;sort=default"> <span>烤鱼</span> <em>14</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=421&amp;pcat=99&amp;sort=default"> <span>干锅/香锅</span> <em>52</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=177&amp;pcat=99&amp;sort=default"> <span>西餐</span> <em>75</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=180&amp;pcat=99&amp;sort=default"> <span>海鲜</span> <em>21</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=409&amp;pcat=99&amp;sort=default"> <span>北京菜</span> <em>61</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=407&amp;pcat=99&amp;sort=default"> <span>川菜</span> <em>46</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=410&amp;pcat=99&amp;sort=default"> <span>粤菜</span> <em>30</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=436&amp;pcat=99&amp;sort=default"> <span>台湾菜</span> <em>1</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=408&amp;pcat=99&amp;sort=default"> <span>湘菜</span> <em>89</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=412&amp;pcat=99&amp;sort=default"> <span>江浙菜</span> <em>11</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=415&amp;pcat=99&amp;sort=default"> <span>东北菜</span> <em>17</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=416&amp;pcat=99&amp;sort=default"> <span>西北菜</span> <em>6</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=417&amp;pcat=99&amp;sort=default"> <span>内蒙菜</span> <em>4</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=418&amp;pcat=99&amp;sort=default"> <span>湖北菜</span> <em>3</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=419&amp;pcat=99&amp;sort=default"> <span>鲁菜</span> <em>8</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=439&amp;pcat=99&amp;sort=default"> <span>豫菜</span> <em>304</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=440&amp;pcat=99&amp;sort=default"> <span>徽菜</span> <em>1</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=420&amp;pcat=99&amp;sort=default"> <span>新疆菜</span> <em>9</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=423&amp;pcat=99&amp;sort=default"> <span>韩国料理</span> <em>12</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=424&amp;pcat=99&amp;sort=default"> <span>日本料理</span> <em>8</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=427&amp;pcat=99&amp;sort=default"> <span>主题/创意菜</span> <em>112</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=434&amp;pcat=99&amp;sort=default"> <span>咖啡酒吧</span> <em>31</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=25&amp;pcat=99&amp;sort=default"> <span>蛋糕甜品</span> <em>205</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=24&amp;pcat=99&amp;sort=default"> <span>小吃快餐</span> <em>180</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=26&amp;pcat=99&amp;sort=default"> <span>其他美食</span> <em>8</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="category_2">
+        <div>
+          <section> <a class="submenu_handle" href="list.php?cat=2&amp;sort=default"> <span>全部</span> <em>260</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=31&amp;pcat=2&amp;sort=default"> <span>KTV</span> <em>65</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=28&amp;pcat=2&amp;sort=default"> <span>养生休闲</span> <em>124</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=433&amp;pcat=2&amp;sort=default"> <span>温泉洗浴</span> <em>2</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=36&amp;pcat=2&amp;sort=default"> <span>运动健身</span> <em>18</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=33&amp;pcat=2&amp;sort=default"> <span>桌游电玩</span> <em>22</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=32&amp;pcat=2&amp;sort=default"> <span>咖啡茶馆</span> <em>31</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="category_29">
+        <div>
+          <section> <a class="submenu_handle" href="list.php?cat=29&amp;sort=default"> <span>全部</span> <em>12</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=561&amp;pcat=29&amp;sort=default"> <span>电影票</span> <em>11</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=562&amp;pcat=29&amp;sort=default"> <span>影院小吃</span> <em>8</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="category_46">
+        <div>
+          <section> <a class="submenu_handle" href="list.php?cat=46&amp;sort=default"> <span>全部</span> <em>257</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=40&amp;pcat=46&amp;sort=default"> <span>健康护理</span> <em>95</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=42&amp;pcat=46&amp;sort=default"> <span>汽车服务</span> <em>11</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=39&amp;pcat=46&amp;sort=default"> <span>母婴亲子</span> <em>3</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=41&amp;pcat=46&amp;sort=default"> <span>洗涤护理</span> <em>2</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=38&amp;pcat=46&amp;sort=default"> <span>婚庆服务</span> <em>53</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=43&amp;pcat=46&amp;sort=default"> <span>宠物护理</span> <em>1</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=429&amp;pcat=46&amp;sort=default"> <span>配镜</span> <em>31</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=430&amp;pcat=46&amp;sort=default"> <span>照片冲印</span> <em>9</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=246&amp;pcat=46&amp;sort=default"> <span>其他生活</span> <em>58</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="category_37">
+        <div>
+          <section> <a class="submenu_handle" href="list.php?cat=37&amp;sort=default"> <span>全部</span> <em>188</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=553&amp;pcat=37&amp;sort=default"> <span>品质婚纱</span> <em>5</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=529&amp;pcat=37&amp;sort=default"> <span>热卖婚纱</span> <em>19</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=554&amp;pcat=37&amp;sort=default"> <span>孕妇写真</span> <em>7</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=530&amp;pcat=37&amp;sort=default"> <span>成人写真</span> <em>44</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=531&amp;pcat=37&amp;sort=default"> <span>儿童写真</span> <em>60</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=533&amp;pcat=37&amp;sort=default"> <span>照片冲印</span> <em>9</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=534&amp;pcat=37&amp;sort=default"> <span>结婚婚庆</span> <em>53</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=535&amp;pcat=37&amp;sort=default"> <span>其它</span> <em>3</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="category_300">
+        <div>
+          <section> <a class="submenu_handle" href="list.php?cat=300&amp;sort=default&amp;n=0"> <span>全部</span> <em>551</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=302&amp;pcat=300&amp;sort=default&amp;n=0"> <span>经济型酒店</span> <em>373</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=546&amp;pcat=300&amp;sort=default&amp;n=0"> <span>三星/舒适</span> <em>46</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=545&amp;pcat=300&amp;sort=default&amp;n=0"> <span>四星/高档</span> <em>16</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=303&amp;pcat=300&amp;sort=default&amp;n=0"> <span>五星/豪华</span> <em>2</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=304&amp;pcat=300&amp;sort=default&amp;n=0"> <span>特色酒店</span> <em>49</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=305&amp;pcat=300&amp;sort=default&amp;n=0"> <span>小时房</span> <em>71</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="category_400">
+        <div>
+          <section> <a class="submenu_handle" href="list.php?cat=400&amp;sort=default"> <span>全部</span> <em>30</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=401&amp;pcat=400&amp;sort=default"> <span>周边游</span> <em>10</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=404&amp;pcat=400&amp;sort=default"> <span>门票</span> <em>22</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="category_442">
+        <div>
+          <section> <a class="submenu_handle" href="list.php?cat=442&amp;sort=default"> <span>全部</span> <em>177</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=538&amp;pcat=442&amp;sort=default"> <span>美容美体</span> <em>23</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=539&amp;pcat=442&amp;sort=default"> <span>美发</span> <em>88</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=540&amp;pcat=442&amp;sort=default"> <span>美甲</span> <em>66</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="category_481">
+        <div>
+          <section> <a class="submenu_handle" href="list.php?cat=481&amp;sort=default"> <span>全部</span> <em>294</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=482&amp;pcat=481&amp;sort=default"> <span>亲子早教</span> <em>2</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=484&amp;pcat=481&amp;sort=default"> <span>中小学课外辅导</span> <em>38</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=485&amp;pcat=481&amp;sort=default"> <span>少儿英语</span> <em>9</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=486&amp;pcat=481&amp;sort=default"> <span>少儿才艺</span> <em>8</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=488&amp;pcat=481&amp;sort=default"> <span>少儿素质课程</span> <em>3</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=489&amp;pcat=481&amp;sort=default"> <span>会计资质</span> <em>47</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=490&amp;pcat=481&amp;sort=default"> <span>建造师</span> <em>21</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=491&amp;pcat=481&amp;sort=default"> <span>司法考试</span> <em>8</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=492&amp;pcat=481&amp;sort=default"> <span>电脑IT</span> <em>10</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=493&amp;pcat=481&amp;sort=default"> <span>公务员考试</span> <em>11</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=494&amp;pcat=481&amp;sort=default"> <span>劳动人事部资格考试</span> <em>33</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=495&amp;pcat=481&amp;sort=default"> <span>英语口语</span> <em>34</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=497&amp;pcat=481&amp;sort=default"> <span>雅思</span> <em>14</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=498&amp;pcat=481&amp;sort=default"> <span>托福</span> <em>14</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=499&amp;pcat=481&amp;sort=default"> <span>SAT</span> <em>6</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=500&amp;pcat=481&amp;sort=default"> <span>新概念英语</span> <em>3</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=501&amp;pcat=481&amp;sort=default"> <span>日语</span> <em>4</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=502&amp;pcat=481&amp;sort=default"> <span>德语</span> <em>1</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=504&amp;pcat=481&amp;sort=default"> <span>其他外语</span> <em>13</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=505&amp;pcat=481&amp;sort=default"> <span>成人高考</span> <em>13</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=506&amp;pcat=481&amp;sort=default"> <span>自学考试</span> <em>35</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=507&amp;pcat=481&amp;sort=default"> <span>升学辅导</span> <em>73</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=508&amp;pcat=481&amp;sort=default"> <span>舞蹈音乐</span> <em>18</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=509&amp;pcat=481&amp;sort=default"> <span>运动健身</span> <em>9</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=510&amp;pcat=481&amp;sort=default"> <span>成人才艺</span> <em>25</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=513&amp;pcat=481&amp;sort=default"> <span>网络远程</span> <em>233</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=514&amp;pcat=481&amp;sort=default"> <span>企业培训</span> <em>5</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=515&amp;pcat=481&amp;sort=default"> <span>经理人培训</span> <em>3</em> </a> </section>
+          <section> <a class="submenu_handle" href="list.php?cat=517&amp;pcat=481&amp;sort=default"> <span>学历教育</span> <em>97</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="category_16">
+        <div>
+          <section> <a class="submenu_handle" href="list.php?cat=16&amp;sort=default"> <span>全部</span> <em>4</em> </a> </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide sort-shop" data-main="category_3">
+        <div>
+          <section> <a class="submenu_handle" href="list.php?cat=3&amp;sort=default&amp;n=0"> <span>全部</span> <em>2755</em> </a> </section>
+          <section> <a class="submenu_handle" data-sub="category_12" href="list.php?cat=12&amp;pcat=3&amp;sort=default&amp;n=0"> <span>服饰鞋包</span> <em class="more">850</em> </a>
+            <div class="sort-shop-sider hide" data-sub="category_12"> <a href="list.php?cat=12&amp;pcat=3&amp;sort=default&amp;n=0"> <span>全部</span> <em>850</em> </a> <a href="list.php?cat=84&amp;pcat=12&amp;sort=default&amp;n=0"> <span>女装</span> <em>322</em> </a> <a href="list.php?cat=83&amp;pcat=12&amp;sort=default&amp;n=0"> <span>男装</span> <em>174</em> </a> <a href="list.php?cat=170&amp;pcat=12&amp;sort=default&amp;n=0"> <span>男鞋</span> <em>97</em> </a> <a href="list.php?cat=525&amp;pcat=12&amp;sort=default&amp;n=0"> <span>女鞋</span> <em>80</em> </a> <a href="list.php?cat=174&amp;pcat=12&amp;sort=default&amp;n=0"> <span>内衣家居</span> <em>84</em> </a> <a href="list.php?cat=443&amp;pcat=12&amp;sort=default&amp;n=0"> <span>袜子</span> <em>22</em> </a> <a href="list.php?cat=444&amp;pcat=12&amp;sort=default&amp;n=0"> <span>保健塑形</span> <em>1</em> </a> <a href="list.php?cat=175&amp;pcat=12&amp;sort=default&amp;n=0"> <span>箱包</span> <em>62</em> </a> <a href="list.php?cat=446&amp;pcat=12&amp;sort=default&amp;n=0"> <span>配饰</span> <em>17</em> </a> </div>
+          </section>
+          <section> <a class="submenu_handle" data-sub="category_17" href="list.php?cat=17&amp;pcat=3&amp;sort=default&amp;n=0"> <span>家居家纺</span> <em class="more">362</em> </a>
+            <div class="sort-shop-sider hide" data-sub="category_17"> <a href="list.php?cat=17&amp;pcat=3&amp;sort=default&amp;n=0"> <span>全部</span> <em>362</em> </a> <a href="list.php?cat=109&amp;pcat=17&amp;sort=default&amp;n=0"> <span>家具收纳</span> <em>79</em> </a> <a href="list.php?cat=108&amp;pcat=17&amp;sort=default&amp;n=0"> <span>家纺</span> <em>125</em> </a> <a href="list.php?cat=456&amp;pcat=17&amp;sort=default&amp;n=0"> <span>清洁日用</span> <em>107</em> </a> <a href="list.php?cat=457&amp;pcat=17&amp;sort=default&amp;n=0"> <span>五金家装</span> <em>8</em> </a> <a href="list.php?cat=458&amp;pcat=17&amp;sort=default&amp;n=0"> <span>厨具餐具</span> <em>39</em> </a> <a href="list.php?cat=459&amp;pcat=17&amp;sort=default&amp;n=0"> <span>装修装饰</span> <em>14</em> </a> </div>
+          </section>
+          <section> <a class="submenu_handle" data-sub="category_20" href="list.php?cat=20&amp;pcat=3&amp;sort=default&amp;n=0"> <span>运动户外</span> <em class="more">133</em> </a>
+            <div class="sort-shop-sider hide" data-sub="category_20"> <a href="list.php?cat=20&amp;pcat=3&amp;sort=default&amp;n=0"> <span>全部</span> <em>133</em> </a> <a href="list.php?cat=468&amp;pcat=20&amp;sort=default&amp;n=0"> <span>户外装备</span> <em>39</em> </a> <a href="list.php?cat=469&amp;pcat=20&amp;sort=default&amp;n=0"> <span>运动器具</span> <em>29</em> </a> <a href="list.php?cat=470&amp;pcat=20&amp;sort=default&amp;n=0"> <span>户外服饰</span> <em>47</em> </a> <a href="list.php?cat=523&amp;pcat=20&amp;sort=default&amp;n=0"> <span>运动鞋</span> <em>19</em> </a> <a href="list.php?cat=557&amp;pcat=20&amp;sort=default&amp;n=0"> <span>运动休闲</span> <em>2</em> </a> </div>
+          </section>
+          <section> <a class="submenu_handle" data-sub="category_14" href="list.php?cat=14&amp;pcat=3&amp;sort=default&amp;n=0"> <span>食品茶酒</span> <em class="more">463</em> </a>
+            <div class="sort-shop-sider hide" data-sub="category_14"> <a href="list.php?cat=14&amp;pcat=3&amp;sort=default&amp;n=0"> <span>全部</span> <em>463</em> </a> <a href="list.php?cat=98&amp;pcat=14&amp;sort=default&amp;n=0"> <span>地方特产</span> <em>111</em> </a> <a href="list.php?cat=93&amp;pcat=14&amp;sort=default&amp;n=0"> <span>休闲零食</span> <em>79</em> </a> <a href="list.php?cat=97&amp;pcat=14&amp;sort=default&amp;n=0"> <span>进口食品</span> <em>5</em> </a> <a href="list.php?cat=96&amp;pcat=14&amp;sort=default&amp;n=0"> <span>营养保健</span> <em>25</em> </a> <a href="list.php?cat=193&amp;pcat=14&amp;sort=default&amp;n=0"> <span>茗茶冲调</span> <em>60</em> </a> <a href="list.php?cat=95&amp;pcat=14&amp;sort=default&amp;n=0"> <span>酒水饮料</span> <em>28</em> </a> <a href="list.php?cat=556&amp;pcat=14&amp;sort=default&amp;n=0"> <span>生鲜食品</span> <em>93</em> </a> <a href="list.php?cat=559&amp;pcat=14&amp;sort=default&amp;n=0"> <span>月饼</span> <em>134</em> </a> <a href="list.php?cat=560&amp;pcat=14&amp;sort=default&amp;n=0"> <span>大闸蟹</span> <em>77</em> </a> </div>
+          </section>
+          <section> <a class="submenu_handle" data-sub="category_18" href="list.php?cat=18&amp;pcat=3&amp;sort=default&amp;n=0"> <span>数码家电</span> <em class="more">348</em> </a>
+            <div class="sort-shop-sider hide" data-sub="category_18"> <a href="list.php?cat=18&amp;pcat=3&amp;sort=default&amp;n=0"> <span>全部</span> <em>348</em> </a> <a href="list.php?cat=447&amp;pcat=18&amp;sort=default&amp;n=0"> <span>生活家电</span> <em>61</em> </a> <a href="list.php?cat=448&amp;pcat=18&amp;sort=default&amp;n=0"> <span>厨卫电器</span> <em>53</em> </a> <a href="list.php?cat=449&amp;pcat=18&amp;sort=default&amp;n=0"> <span>个护健康</span> <em>69</em> </a> <a href="list.php?cat=450&amp;pcat=18&amp;sort=default&amp;n=0"> <span>手机配件</span> <em>49</em> </a> <a href="list.php?cat=451&amp;pcat=18&amp;sort=default&amp;n=0"> <span>影音娱乐</span> <em>15</em> </a> <a href="list.php?cat=452&amp;pcat=18&amp;sort=default&amp;n=0"> <span>电脑配件</span> <em>33</em> </a> <a href="list.php?cat=478&amp;pcat=18&amp;sort=default&amp;n=0"> <span>数码配件</span> <em>52</em> </a> <a href="list.php?cat=476&amp;pcat=18&amp;sort=default&amp;n=0"> <span>汽车用品</span> <em>30</em> </a> </div>
+          </section>
+          <section> <a class="submenu_handle" data-sub="category_13" href="list.php?cat=13&amp;pcat=3&amp;sort=default&amp;n=0"> <span>母婴玩具</span> <em class="more">192</em> </a>
+            <div class="sort-shop-sider hide" data-sub="category_13"> <a href="list.php?cat=13&amp;pcat=3&amp;sort=default&amp;n=0"> <span>全部</span> <em>192</em> </a> <a href="list.php?cat=145&amp;pcat=13&amp;sort=default&amp;n=0"> <span>婴幼用品</span> <em>62</em> </a> <a href="list.php?cat=151&amp;pcat=13&amp;sort=default&amp;n=0"> <span>婴幼服饰</span> <em>24</em> </a> <a href="list.php?cat=146&amp;pcat=13&amp;sort=default&amp;n=0"> <span>玩具早教</span> <em>59</em> </a> <a href="list.php?cat=91&amp;pcat=13&amp;sort=default&amp;n=0"> <span>孕妈用品</span> <em>25</em> </a> <a href="list.php?cat=19&amp;pcat=13&amp;sort=default&amp;n=0"> <span>图书文具</span> <em>4</em> </a> <a href="list.php?cat=544&amp;pcat=13&amp;sort=default&amp;n=0"> <span>儿童服饰</span> <em>25</em> </a> </div>
+          </section>
+          <section> <a class="submenu_handle" data-sub="category_15" href="list.php?cat=15&amp;pcat=3&amp;sort=default&amp;n=0"> <span>美妆个护</span> <em class="more">267</em> </a>
+            <div class="sort-shop-sider hide" data-sub="category_15"> <a href="list.php?cat=15&amp;pcat=3&amp;sort=default&amp;n=0"> <span>全部</span> <em>267</em> </a> <a href="list.php?cat=173&amp;pcat=15&amp;sort=default&amp;n=0"> <span>护肤保养</span> <em>124</em> </a> <a href="list.php?cat=147&amp;pcat=15&amp;sort=default&amp;n=0"> <span>美发洗浴</span> <em>32</em> </a> <a href="list.php?cat=100&amp;pcat=15&amp;sort=default&amp;n=0"> <span>彩妆</span> <em>16</em> </a> <a href="list.php?cat=148&amp;pcat=15&amp;sort=default&amp;n=0"> <span>男士用品</span> <em>14</em> </a> <a href="list.php?cat=101&amp;pcat=15&amp;sort=default&amp;n=0"> <span>香水</span> <em>4</em> </a> <a href="list.php?cat=102&amp;pcat=15&amp;sort=default&amp;n=0"> <span>化妆用品</span> <em>5</em> </a> <a href="list.php?cat=455&amp;pcat=15&amp;sort=default&amp;n=0"> <span>口腔护理</span> <em>9</em> </a> <a href="list.php?cat=453&amp;pcat=15&amp;sort=default&amp;n=0"> <span>女性护理</span> <em>16</em> </a> <a href="list.php?cat=454&amp;pcat=15&amp;sort=default&amp;n=0"> <span>成人用品</span> <em>51</em> </a> </div>
+          </section>
+          <section> <a class="submenu_handle" data-sub="category_88" href="list.php?cat=88&amp;pcat=3&amp;sort=default&amp;n=0"> <span>钟表首饰</span> <em class="more">149</em> </a>
+            <div class="sort-shop-sider hide" data-sub="category_88"> <a href="list.php?cat=88&amp;pcat=3&amp;sort=default&amp;n=0"> <span>全部</span> <em>149</em> </a> <a href="list.php?cat=471&amp;pcat=88&amp;sort=default&amp;n=0"> <span>手表</span> <em>48</em> </a> <a href="list.php?cat=123&amp;pcat=88&amp;sort=default&amp;n=0"> <span>珠宝首饰</span> <em>78</em> </a> <a href="list.php?cat=472&amp;pcat=88&amp;sort=default&amp;n=0"> <span>创意礼品</span> <em>15</em> </a> <a href="list.php?cat=474&amp;pcat=88&amp;sort=default&amp;n=0"> <span>眼镜</span> <em>7</em> </a> <a href="list.php?cat=475&amp;pcat=88&amp;sort=default&amp;n=0"> <span>打火机</span> <em>1</em> </a> </div>
+          </section>
+        </div>
+        <i class="m-down hide"></i> </div>
+      <div class="sort-sider hide" data-main="category_emptyMenu">
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <div class="sortdrop-wrapper hide" data-type="sort">
+    <div class="sort-wrapper">
+      <div class="sort-view">
+        <div>
+          <section class="select"> <a href="list.php?cat=0&amp;sort=default"> <span>默认排序</span> <em></em> </a> </section>
+          <section> <a href="list.php?cat=0&amp;sort=time"> <span>最新发布</span> <em></em> </a> </section>
+          <section> <a href="list.php?cat=0&amp;sort=rate"> <span>销量最高</span> <em></em> </a> </section>
+          <section> <a href="list.php?cat=0&amp;sort=price"> <span>价格最低</span> <em></em> </a> </section>
+          <section> <a href="list.php?cat=0&amp;sort=price_desc"> <span>价格最高</span> <em></em> </a> </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="plus-screen"> <i class="screen"></i> </div>
+<div class="conter sort-conter" id="content"> 
+  <!--商家列表内容-->
+  <div class="x-shop-conter">
+    <ul class="list-ul" ms-controller="ShopsList">
+      <li ms-repeat="jsonA">
+       <a href="shop-detail.html">
+          <div class="list-item rel h70">
+        <div class="pic"><img alt="" ms-src="el.url" /></div>
+     
+        <div class="info">
+          <h2>{{el.name}}<span class="x-shop-jian">荐</span><span class="x-shop-v">&nbsp;</span><span class="x-shop-card">卡</span></h2>
+          <div>
+            <div class="x-star-conter"><span></span><span></span><span></span><span></span><span class="star-gray"></span></div>
+          </div>
+          <h3 class="fn f12">{{el.AreaCircle + " "+ el.SecondArea+" "+ el.ClassName}}</h3>
+             <div class="away gray"><1.0km</div>
+        </div>
+      </div>
+      </a>
+      </li>
+    </ul>
+  </div>
+  <div class="pop-shade hide"></div>
+</div>
+   <!--分页-->    
+    <div style="" class="pagenav-wrapper" >
+      <div class="pagenav-content">
+        <div class="pagenav" >
+          <div class="p-first p-gray"> <a >首页</a> </div>
+          <div class="p-prev p-gray"> <a >上一页</a> </div>
+          <div class="pagenav-cur">
+            <div class="pagenav-text"> <span>1/100</span> <i></i> </div>
+            <select atpanel="3,pagechoose,,,footer,20,footer," class="pagenav-select">
+              <option selected="selected">第1页</option>
+              <option>第2页</option>
+              <option>第3页</option>
+              <option>第4页</option>
+              <option>第5页</option>
+              <option>第6页</option>
+              <option>第7页</option>
+              <option>第8页</option>
+              <option>第9页</option>
+              <option>第10页</option>
+              <option>第11页</option>
+              <option>第12页</option>
+              <option>第13页</option>
+              <option>第14页</option>
+              <option>第15页</option>
+              <option>第16页</option>
+              <option>第17页</option>
+              <option>第18页</option>
+              <option>第19页</option>
+              <option>第20页</option>
+            </select>
+          </div>
+          <div class="p-next"> <a href="#">下一页</a> </div>
+          <div class="p-end"> <a href="#">末页</a> </div>
+        </div>
+      </div>
+    </div>
+<!--网站底部-->
+<footer > 
+  <section class="footer-t">
+     <p class="user-info"> <a  class="logon-tt enter-tt" href="../login.html">登录</a><a  class="logon-tt register-tt" href="../regist.html">注册</a> </p>
+    <p class="foot-city f14"> <span>洛阳</span> <a href="changeCity.html">切换城市</a> </p>
+  </section>
+  <section class="footer-sort">
+    <ul class="com-footitem tc">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="资讯/index.html">资讯</a></li>
+      <li><a href="商家/index.html">商家</a></li>
+      <li><a href="商协/index.html">商协</a></li>
+       <li><a href="论坛/index.html">论坛</a></li>
+       <li><a href="便民/center.html">便民</a></li>
+
+    </ul>
+  </section>
+  <section class="footer-copyright f12">河洛网  &copy;   2014 ICP证豫B2-20100066</section>
+ 
+</footer>
+</body>
+</html>
